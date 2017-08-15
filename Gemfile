@@ -3,6 +3,7 @@ ruby '2.3.4'
 
 gem 'devise'
 gem 'figaro'
+gem 'cloudinary'
 gem 'jbuilder', '~> 2.0'
 gem 'pg'
 gem 'puma'
