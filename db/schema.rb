@@ -12,7 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20170815145701) do
 
-
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -73,6 +72,7 @@ ActiveRecord::Schema.define(version: 20170815145701) do
     t.string   "phone_number"
     t.string   "paypal_acount"
     t.boolean  "teacher",                default: false
+    t.string   "photo"
     t.string   "provider"
     t.string   "uid"
     t.string   "facebook_picture_url"
@@ -80,7 +80,6 @@ ActiveRecord::Schema.define(version: 20170815145701) do
     t.string   "last_name"
     t.string   "token"
     t.datetime "token_expiry"
-    t.string   "photo"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
