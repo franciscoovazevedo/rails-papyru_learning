@@ -4,10 +4,12 @@ class TeacherSubjectsController < ApplicationController
   end
 
   def show
-    @teacher = TeacherSubject.find(params[:id])
+    @teacher_subject = TeacherSubject.find(params[:id])
   end
 
   def new
+    @subject = TeacherSubject.find(params[:subject_id])
+    @
   end
 
   def create
