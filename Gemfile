@@ -3,7 +3,7 @@ ruby '2.3.4'
 
 gem 'carrierwave', '~> 0.11.2'
 gem 'devise'
-# gem 'figaro'
+gem 'figaro'
 gem 'cloudinary'
 gem 'jbuilder', '~> 2.0'
 gem 'pg'
