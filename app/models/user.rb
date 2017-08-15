@@ -14,5 +14,4 @@ class User < ApplicationRecord
   validates :name, :address, :phone_number, presence: true # maybe validate presence after for teacher
   validates_format_of :phone_number, :with => /\A(\+351)?(9|2)\d{8}\z/i
 
-
 end
