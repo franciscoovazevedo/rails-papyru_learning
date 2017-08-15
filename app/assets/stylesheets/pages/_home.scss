@@ -1,8 +1,11 @@
-// Specific CSS for your home-page
+// #17AA1C
+/*
+
 .banner {
   color: white;
   text-align: center;
-  height: calc(100vh - 70px);
+  height: calc(80vh - 70px);
+  background: url('http://res.cloudinary.com/gabrielecanepa/image/upload/v1502796959/home-bg-2_zvcbto.jpg') no-repeat top center;
   background-size: cover !important;
   display: flex;
   align-items: center;
@@ -12,7 +15,7 @@
 .banner h1 {
   font-size: 60px;
   font-weight: bold;
-  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.1);
 }
 
 .banner p {
@@ -21,4 +24,82 @@
   color: rgb(255, 255, 255);
   opacity: 0.6;
   margin-bottom: 30px;
+}
+
+*/
+
+.no-video .video-container video,
+.touch .video-container video {
+  display: none;
+}
+
+.no-video .video-container .poster,
+.touch .video-container .poster {
+  display: block !important;
+}
+
+.video-container {
+  position: relative;
+  bottom: 0%;
+  left: 0%;
+  height: calc(80vh - 70px);
+  width: 100%;
+  overflow: hidden;
+  background: #000;
+}
+
+.video-container .poster img {
+  width: 100%;
+  bottom: 0;
+  position: absolute;
+}
+
+.video-container .filter {
+  z-index: 100;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.4);
+  width: 100%;
+}
+
+.video-container .title-container {
+  z-index: 1000;
+  position: absolute;
+  top: 35%;
+  width: 100%;
+  text-align: center;
+  color: #FFF;
+}
+
+.video-container .description .headline {
+  font-size: 60px;
+  font-weight: bold;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.1);
+}
+
+.video-container .description .inner {
+  font-size: 20px;
+  font-weight: lighter;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 30px;
+}
+
+.video-container .link {
+  position: absolute;
+  bottom: 3em;
+  width: 100%;
+  text-align: center;
+  z-index: 1001;
+  font-size: 2em;
+  color: #fff;
+}
+
+.video-container video {
+  position: absolute;
+  z-index: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.video-container video.fillWidth {
+  width: 100%;
 }

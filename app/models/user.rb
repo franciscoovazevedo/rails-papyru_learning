@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+  mount_uploader :photo, PhotoUploader
   has_many :lessons
   has_many :reviews
   has_many :teacher_subjects
@@ -11,9 +12,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   devise :omniauthable, omniauth_providers: [:facebook]
 
-  validates :name, :address, :phone_number, :teacher, presence: true
+  validates :name, :address, :phone_number, presence: true # maybe validate presence after for teacher
   validates_format_of :phone_number, :with => /\A(\+351)?(9|2)\d{8}\z/i
-
+  
   def self.find_for_facebook_oauth(auth)
     user_params = auth.slice(:provider, :uid)
     user_params.merge! auth.info.slice(:email, :first_name, :last_name)

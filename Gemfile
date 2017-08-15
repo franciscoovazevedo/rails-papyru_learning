@@ -1,8 +1,9 @@
 source 'https://rubygems.org'
 ruby '2.3.4'
 
+gem 'carrierwave', '~> 0.11.2'
 gem 'devise'
-# gem 'figaro'
+gem 'figaro'
 gem 'cloudinary'
 gem 'jbuilder', '~> 2.0'
 gem 'pg'
@@ -27,4 +28,6 @@ group :development, :test do
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
