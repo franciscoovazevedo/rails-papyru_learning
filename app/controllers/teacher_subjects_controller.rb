@@ -8,11 +8,17 @@ class TeacherSubjectsController < ApplicationController
   end
 
   def new
-    @subject = TeacherSubject.find(params[:subject_id])
-    @
+    @subject = Subject.find(params[:subject_id])
+    @teacher = User.find(params[:user_id])
+    if @teacher.teacher?
+      @teacher_subject = TeacherSubject.new
+    else
+      redirect_to root_path
+    end
   end
 
   def create
+
   end
 
   def edit
