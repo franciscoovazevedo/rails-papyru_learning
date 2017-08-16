@@ -1,6 +1,12 @@
 source 'https://rubygems.org'
 ruby '2.3.4'
 
+
+# gems for fake seeds
+gem 'faker'
+gem 'image_suckr'
+
+
 gem 'carrierwave', '~> 0.11.2'
 gem 'devise'
 gem 'figaro'

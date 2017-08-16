@@ -4,8 +4,6 @@ class Lesson < ApplicationRecord
   validate :date_presence
 
 
-
-
   private
 
   def date_presence
