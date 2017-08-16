@@ -5,3 +5,48 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+def random_numbers
+  phone_number = "9"
+  8.times do
+    phone_number += rand(0..9).to_s
+  end
+  phone_number
+end
+image = ImageSuckr::GoogleSuckr.new
+
+# Already created
+# 10.times do
+#   user = User.new(name: Faker::HarryPotter.character, email:  Faker::HarryPotter.character.delete(' ') + "@hogwarts.com", phone_number: random_numbers, teacher: [true, false].sample,
+#    photo: "home", password: "123456", address: Faker::GameOfThrones.city  )
+#   user.save
+# end
+
+# # Already created
+# 10.times do
+#   subject = Subject.new(name: Faker::Hobbit.character)
+#   subject.save
+# end
+
+#Already done
+# User.all.each do |user|
+#   Review.create(rating: rand(1..10), content: Faker::Hipster.paragraph, user: user)
+# end
+
+# Already done
+# User.all.each do |user|
+#   TeacherSubject.create(begin: Faker::Date.forward, end: Faker::Date.forward, price:  Faker::Number.decimal, description: Faker::Hipster.paragraphs + Faker::Hipster.paragraphs , user: user, subject: Subject.all.sample)
+# end
+
+# Already done
+# User.all.each do |user|
+#   Lesson.create(date: Faker::Date.forward, user: user, teacher_subject: TeacherSubject.all.sample)
+# end
+
+
+
+
+
+
+
+
