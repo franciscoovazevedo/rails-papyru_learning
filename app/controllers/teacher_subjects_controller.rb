@@ -1,4 +1,4 @@
-class TeacherSubjectsController < ApplicationController
+  class TeacherSubjectsController < ApplicationController
   def index
     @teacher_subjects = TeacherSubject.all
   end
@@ -17,7 +17,13 @@ class TeacherSubjectsController < ApplicationController
   end
 
   def create
-
+    @teacher_subject = TeacherSubject.new(teacher_subject_params)
+    @teacher_subject.user = current_user
+    if @teacher_subject.save
+      redirect_to teacher_subject_path(@teacher_subject)
+    else
+      render :new
+    end
   end
 
   def edit
@@ -30,6 +36,10 @@ class TeacherSubjectsController < ApplicationController
   end
 
   private
+
+  def teacher_subject_params
+    params.require(:teacher_subject).permit(:end, :begin, :description, :price, :subject_id)
+  end
 
   def find_teacher_subject
     @teacher = TeacherSubject.find(params[:id])
