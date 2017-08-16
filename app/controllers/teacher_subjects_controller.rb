@@ -20,12 +20,10 @@
     @teacher_subject = TeacherSubject.new(teacher_subject_params)
     @teacher_subject.user = current_user
     if @teacher_subject.save
-      redirect_to cocktail_path(@dose.cocktail)
+      redirect_to teacher_subject_path(@teacher_subject)
     else
       render :new
     end
-
-
   end
 
   def edit
@@ -40,7 +38,7 @@
   private
 
   def teacher_subject_params
-    params.require(:teacher_subject).permit(:description, :ingredient_id)
+    params.require(:teacher_subject).permit(:end, :begin, :description, :price, :subject_id)
   end
 
   def find_teacher_subject
