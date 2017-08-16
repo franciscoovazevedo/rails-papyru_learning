@@ -6,7 +6,7 @@ class TeacherSubject < ApplicationRecord
   validate :date_begin
   validate :date_end
   validates :price, numericality: true
-  validates :description, length: { minimum: 300 }
+  validates :description, length: { minimum: 100 }
 
   private
 
