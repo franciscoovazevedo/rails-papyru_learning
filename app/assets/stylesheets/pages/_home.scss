@@ -95,7 +95,7 @@ form {
   border-bottom: 1.5px solid #17AA1C;
 }
 
-#search:focus {
+#search:focus, #search:active {
   border: none;
   border-bottom: 1.5px solid #17AA1C;
   border-radius: 0;
@@ -112,6 +112,6 @@ form {
   border-radius: 4px;
   transition: background .16s;
   -webkit-transition: background .16s;
-  padding: 10px 16px;
+  padding: 6px 24px;
   margin-left: 12px;
 }
