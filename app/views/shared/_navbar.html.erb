@@ -19,6 +19,9 @@
       <%= link_to '#', :class => 'navbar-wagon-link' do %>
         <span>Help</span>
       <% end %>
+      <%= link_to '#', :class => 'navbar-wagon-link' do %>
+        <span>New lesson</span>
+      <% end %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
@@ -43,7 +46,7 @@
             </li>
             <li>
               <%= link_to became_teacher_path do %>
-                <%= t(".profile", default: "Become a Teacher") %>
+                <%= t(".sign_out", default: "Become a Teacher") %>
               <% end %>
             </li>
             <li>

@@ -13,6 +13,11 @@
 /* Logo */
 .navbar-wagon-brand img {
   height: 40px;
+  position: relative;
+}
+
+.navbar-wagon-brand img:active {
+  top: 1px;
 }
 
 /* User Avatar */
@@ -71,6 +76,11 @@
 
 #navbar-login {
   color: #17AA1C;
+  position: relative;
+}
+
+#navbar-login:active {
+  top: 1px;
 }
 
 #navbar-signup {
