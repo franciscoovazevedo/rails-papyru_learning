@@ -8,8 +8,7 @@ class TeacherSubjectsController < ApplicationController
   end
 
   def new
-    @subject = Subject.find(params[:subject_id])
-    @teacher = User.find(params[:user_id])
+    @teacher = current_user
     if @teacher.teacher?
       @teacher_subject = TeacherSubject.new
     else

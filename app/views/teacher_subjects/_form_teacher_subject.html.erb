@@ -1,0 +1,7 @@
+<%= simple_form_for @teacher_subject do |f| %>
+  <%= f.input :teacher_id, as: :hidden, input_html: { value: @teacher.id } %>
+  <%= f.input :subject_id, collection: Subject.all %>
+  <%= f.input :description%>
+  <%= f.submit "Submit", class: "btn btn-success" %>
+<% end -%>
+
