@@ -1,6 +1,7 @@
   class TeacherSubjectsController < ApplicationController
   def index
-    @teacher_subjects = TeacherSubject.all
+    @subject = Subject.where(name: params[:subject]).first
+    @teacher_subjects = TeacherSubject.where(subject_id: @subject.id)
   end
 
   def show
