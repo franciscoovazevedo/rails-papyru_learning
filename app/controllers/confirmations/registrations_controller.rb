@@ -26,7 +26,11 @@ class Confirmations::RegistrationsController < Devise::RegistrationsController
   # def destroy
   #   super
   # end
-
+  def became_teacher
+    current_user.teacher = true
+    current_user.save
+    redirect_to new_teacher_subject_path, notice: "YOU ARE NOW A TEACHER!!!"
+  end
   # GET /resource/cancel
   # Forces the session data which is usually expired after sign
   # in to be expired now. This is useful if the user wants to
