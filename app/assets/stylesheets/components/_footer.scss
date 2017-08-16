@@ -1,0 +1,42 @@
+
+.footer {
+  background: #F4F4F4;
+  display: block;
+  align-items: center;
+  color: rgba(0,0,0,0.3);
+  height: 100px;
+}
+.footer-social-links {
+  background: #F4F4F4;
+  padding: 15px;
+  margin: 0 auto;
+  align-items: center;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+.footer-social-links a {
+  color: black;
+  opacity: 0.15;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 0px 10px;
+  align-items: center;
+
+}
+.footer-social-links a:hover {
+  opacity: 1;
+}
+
+.final-row {
+  text-decoration: none;
+  padding: 5px;
+}
+
+.final-row a {
+  color: rgba(0,0,0,0.3);
+  padding: 0px 10px;
+}
+.final-row a:hover {
+  color: #337ab7;
+  text-decoration: none;
+}
+
