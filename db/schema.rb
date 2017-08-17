@@ -79,7 +79,6 @@ ActiveRecord::Schema.define(version: 20170817142602) do
     t.string   "phone_number"
     t.string   "paypal_acount"
     t.boolean  "teacher",                default: false
-    t.string   "photo",                  default: "profile_default_usd3dj"
     t.string   "provider"
     t.string   "uid"
     t.string   "facebook_picture_url"
@@ -87,6 +86,7 @@ ActiveRecord::Schema.define(version: 20170817142602) do
     t.string   "last_name"
     t.string   "token"
     t.datetime "token_expiry"
+    t.string   "photo",                  default: "profile_default_usd3dj"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
