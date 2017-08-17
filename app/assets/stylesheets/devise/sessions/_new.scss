@@ -1,1 +1,98 @@
+.page-body {
+  background: #F5F5F5;
+  height: calc(85vh - 82px);
+}
+
+.form-container {
+  width: 40%;
+  margin: 60px auto;
+  background: #FFF;
+  border: 1px solid #E6E6E6;
+}
+
+.social-btn {
+  width: 40%;
+  margin: 0 auto;
+}
+
+.legend {
+  position: relative;
+  width: 100%;
+  display: block;
+  background: #17AA1C;
+  padding: 15px;
+  color: #FFF;
+  font-size: 20px;
+
+  &:after {
+    content: "";
+    background-image: url(http://simpleicon.com/wp-content/uploads/multy-user.png);
+    background-size: 100px 100px;
+    background-repeat: no-repeat;
+    background-position: 152px -16px;
+    opacity: 0.06;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+  }
+}
+
+.input {
+  position: relative;
+  width: 90%;
+  margin: 15px auto;
+
+  span {
+    position: absolute;
+    display: block;
+    color: darken(#EDEDED, 10%);
+    left: 10px;
+    top: 4px;
+    font-size: 20px;
+  }
+
+  input {
+    width: 100%;
+    padding: 10px 5px 10px 40px;
+    display: block;
+    border: 1px solid #B2B2B2;
+    border-radius: 4px;
+    transition: 0.2s ease-out;
+    color: darken(#B2B2B2, 30%);
+
+    &:focus {
+      padding: 10px 5px 10px 10px;
+      outline: 0;
+      border-color: #17AA1C;
+    }
+  }
+}
+
+.submit {
+  width: 45px;
+  height: 45px;
+  display: block;
+  margin: 0 auto -15px auto;
+  background: #FFF;
+  padding-bottom: 10px;
+  border-radius: 100%;
+  border: 1px solid #17AA1C;
+  color: #17AA1C;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0px 0px 0px 7px #FFF;
+  transition: 0.2s ease-out;
+
+  &:hover, &:focus {
+    background: #17AA1C;
+    color: #FFF;
+    outline: 0;
+  }
+
+  .facebook-login {
+    color: red;
+  }
+}
 

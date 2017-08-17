@@ -3,9 +3,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
   background: white;
   transition: all 0.3s ease;
+  border-top: 1px solid #E6E6E6;
+  border-bottom: 1px solid #E6E6E6;
+  padding-bottom: 10px;
 }
 
 .footer-social-links {
@@ -28,7 +30,7 @@
 
 .final-row {
   text-decoration: none;
-  padding: 10px;
+  padding: 15px 10px 10px 10px;
 }
 
 .final-row a {
