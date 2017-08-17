@@ -16,7 +16,7 @@
       <%= link_to '#', :class => 'navbar-wagon-link' do %>
         <span>Messages</span>
       <% end %>
-      <%= link_to '#', :class => 'navbar-wagon-link' do %>
+      <%= link_to help_path, :class => 'navbar-wagon-link' do %>
         <span>Help</span>
       <% end %>
       <%= link_to '#', :class => 'navbar-wagon-link' do %>
@@ -63,7 +63,7 @@
       <%= link_to '#', :class => 'navbar-wagon-link' do %>
         <span>About</span>
       <% end %>
-      <%= link_to '#', :class => 'navbar-wagon-link' do %>
+      <%= link_to 'help', :class => 'navbar-wagon-link' do %>
         <span>Help</span>
       <% end %>
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-link", id: "navbar-login" %>
