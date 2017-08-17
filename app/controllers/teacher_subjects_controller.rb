@@ -5,7 +5,7 @@
   end
 
   def show
-    @teacher_subject = TeacherSubject.find(params[:id])
+    find_teacher_subject
   end
 
   def new
@@ -13,7 +13,7 @@
     if @teacher.teacher?
       @teacher_subject = TeacherSubject.new
     else
-      redirect_to root_path
+      redirect_to @teacher_subject
     end
   end
 
@@ -28,9 +28,11 @@
   end
 
   def edit
+    find_teacher_subject
   end
 
   def update
+
   end
 
   def destroy
@@ -43,6 +45,6 @@
   end
 
   def find_teacher_subject
-    @teacher = TeacherSubject.find(params[:id])
+    @teacher_subject = TeacherSubject.find(params[:id])
   end
 end
