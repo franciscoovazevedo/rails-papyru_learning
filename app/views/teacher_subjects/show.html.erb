@@ -3,61 +3,69 @@
   <div class="row">
     <div class="col-sm-8">
       <div class="col-sm-6">
-        <img src='https://kitt.lewagon.com/placeholder/users/alex-felix' class="avatar-large"/>
-        <p>name: <%= @teacher_subject.user.name %> </p>
-        <p>email: <%= @teacher_subject.user.email %></p>
-        <p>address: <%= @teacher_subject.user.address %></p>
+        <div class="info">
+          <img src='https://kitt.lewagon.com/placeholder/users/alex-felix' class="avatar-large"/>
+          <p>name: <%= @teacher_subject.user.name %> </p>
+          <p>email: <%= @teacher_subject.user.email %></p>
+          <p>address: <%= @teacher_subject.user.address %></p>
+        </div>
       </div>
 
       <div class="col-sm-6">
-        <h1> lesson description</h1>
-        <h2>You will teach <%= @teacher_subject.subject.name %> from <%= @teacher_subject.begin %> to <%= @teacher_subject.end %>.</h2>
+        <div class="info">
+          <h1> lesson description</h1>
+          <p> description: </p>
+          <h4>You will teach <%= @teacher_subject.subject.name %> from <%= @teacher_subject.begin %> to <%= @teacher_subject.end %>.</h4>
+          <a href="#" class="btn-treehouse">Book lesson</a>
+        </div>
       </div>
       <div class="col-sm-12">
+        <div class="info">
 
-        <h1>Ratings and review</h1>
+          <h1>Ratings and review</h1>
 
-        <div class="message">
-          <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
-          <div class="message-name">
-            <h3>Manel</h3>
-            <p>10/07/17</p>
+          <div class="message">
+            <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+            <div class="message-name">
+              <h3>Manel</h3>
+              <p>10/07/17</p>
+            </div>
+
+            <div class="message-body">
+              <p><strong>To fast to learn!</strong></p>
+              <p>
+                blablablablablablablablablablablablablablablablablablablablablablablablablabla
+              </p>
+            </div>
           </div>
 
-          <div class="message-body">
-            <p><strong>To fast to learn!</strong></p>
-            <p>
-              blablablablablablablablablablablablablablablablablablablablablablablablablabla
-            </p>
-          </div>
-        </div>
+          <div class="message">
+            <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+            <div class="message-name">
+              <h3>Gabrigol</h3>
+              <p>10/07/17</p>
+            </div>
 
-        <div class="message">
-          <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
-          <div class="message-name">
-            <h3>Gabrigol</h3>
-            <p>10/07/17</p>
+            <div class="message-body">
+              <p><strong>To fast to learn!</strong></p>
+              <p>
+                blablablablablablablablablablablablablablablablablablablablablablablablablabla
+              </p>
+            </div>
           </div>
 
-          <div class="message-body">
-            <p><strong>To fast to learn!</strong></p>
-            <p>
-              blablablablablablablablablablablablablablablablablablablablablablablablablabla
-            </p>
-          </div>
-        </div>
-
-        <div class="message">
-          <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
-          <div class="message-name">
-            <h3>Cisco</h3>
-            <p>10/07/17</p>
-          </div>
-          <div class="message-body">
-            <p><strong>To fast to learn!</strong></p>
-            <p>
-              blablablablablablablablablablablablablablablablablablablablablablablablablabla
-            </p>
+          <div class="message">
+            <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+            <div class="message-name">
+              <h3>Cisco</h3>
+              <p>10/07/17</p>
+            </div>
+            <div class="message-body">
+              <p><strong>To fast to learn!</strong></p>
+              <p>
+                blablablablablablablablablablablablablablablablablablablablablablablablablabla
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -103,5 +111,6 @@
 
 </div>
 </div>
+
 
 
