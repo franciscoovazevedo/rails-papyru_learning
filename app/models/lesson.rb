@@ -3,7 +3,6 @@ class Lesson < ApplicationRecord
   belongs_to :teacher_subject
   validate :date_presence
 
-
   private
 
   def date_presence
