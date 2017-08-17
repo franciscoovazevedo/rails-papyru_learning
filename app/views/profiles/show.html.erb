@@ -1,0 +1,16 @@
+<h1>THIS IS THE USER PROFILE PAGE</h1>
+<h1> NAME: <%= @profile.user.name %> </h1>
+
+
+<!-- check if the user is a teacher! -->
+
+<% if @profile.user.teacher? %>
+  <h2> LESSONS AS A TEACHER</h2>
+  <p> <%= @profile.user.address %> <% i = 0 %></p>
+    <% @profile.user.teacher_subjects.each do |lesson| %>
+    <p> LESSON(as teacher) # <%= i += 1 %>- <strong><%= lesson.subject.name %></strong>- begin <%= lesson.begin %> to <%= lesson.end %> </p>
+  <% end %>
+<% else %>
+  <h2>Lessons to attend as a student</h2>
+  <p>Sorry team but i still have work to do in here!! </p>
+<% end %>
