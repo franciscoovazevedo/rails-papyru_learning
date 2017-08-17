@@ -5,6 +5,7 @@ class User < ApplicationRecord
   has_many :lessons
   has_many :reviews
   has_many :teacher_subjects
+  has_one :profile
   # has_many :lessons
   # has_many :reviews
   # has_many teacher_subjects if teacher == true

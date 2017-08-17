@@ -41,14 +41,8 @@
   end
 
   def destroy
-    if @teacher_subject.destroy
-      notice: "Success"
-      redirect_to root
-    else
-      notice: "Insucces"
-      redirect_to root
+    @teacher_subject.destroy
   end
-
   private
 
   def protect_teacher
