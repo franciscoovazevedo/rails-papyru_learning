@@ -14,7 +14,7 @@ class User < ApplicationRecord
 
   validates :name, :address, :phone_number, presence: true # maybe validate presence after for teacher
   validates_format_of :phone_number, :with => /\A(\+351)?(9|2)\d{8}\z/i
-  
+
   def self.find_for_facebook_oauth(auth)
     user_params = auth.slice(:provider, :uid)
     user_params.merge! auth.info.slice(:email, :first_name, :last_name)

@@ -1,0 +1,40 @@
+.help-container {
+  display: flex;
+  margin-right:auto;
+  margin-left:auto;
+  position: relative;
+  bottom: 0%;
+  left: 0%;
+  height: calc(85vh - 70px);
+  width: 100%;
+  margin-bottom:100px;
+}
+.help-container .title-help-container{
+  position: absolute;
+  top: 35%;
+  margin:0 auto;
+  text-align: center;
+  justify-content: center;
+}
+
+.link_container {
+  color: red;
+}
+
+.link_container ul {
+  list-style-type: none;
+}
+
+.header_container{
+  background-color: #17AA1C;
+  color: white;
+  height: 200px;
+  text-align: center;
+  justify-content:center;
+}
+
+h1, h3, p, ul{
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+
