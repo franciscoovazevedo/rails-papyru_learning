@@ -5,7 +5,7 @@
       <div class="col-sm-6">
         <div class="info">
           <img src='https://kitt.lewagon.com/placeholder/users/alex-felix' class="avatar-large"/>
-          <p>name: <%= @teacher_subject.user.name %> </p>
+          <p>name: <%= link_to @teacher_subject.user.name, profile_path(Profile.where(user_id: @teacher_subject.user.id).first.id) %> </p>
           <p>email: <%= @teacher_subject.user.email %></p>
           <p>address: <%= @teacher_subject.user.address %></p>
         </div>
@@ -109,7 +109,7 @@
   </script>
 
 
-</div>
+  </div>
 </div>
 
 

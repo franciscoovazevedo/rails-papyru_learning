@@ -2,3 +2,6 @@
 <% @teacher_subjects.each do |lesson| %>
   <p><%= lesson.user.name %> offers to teach <%= lesson.subject.name %> between <%= lesson.begin %> and <%= lesson.end %></p>
 <% end %>
+
+
+<!-- change_status_lesson_path(@lesson, status: 'confirmed') -->
