@@ -1,94 +1,107 @@
-<div class="container">
-  <div class="row">
-
-    <div class="col-sm-4">
-
-      <img src='https://kitt.lewagon.com/placeholder/users/alex-felix' class="avatar-large"/>
-      <p>name: <%= @teacher_subject.user.name %> </p>
-      <p>email: <%= @teacher_subject.user.email %></p>
-      <p>address: <%= @teacher_subject.user.address %></p>
-
-    </div>
-
-    <div class="col-sm-4">
-
-      <h1> lesson description</h1>
-      <h2>You will teach <%= @teacher_subject.subject.name %> from <%= @teacher_subject.begin %> to <%= @teacher_subject.end %>.</h2>
-
-    </div>
-
-    <div class="col-sm-4">
-        <h1>map map map</h1>
-        <h1>map map map</h1>
-        <h1>map map map</h1>
-        <h1>map map map</h1>
-        <h1>map map map</h1>
-    </div>
-
-  </div>
-
-  <br>
+<div class="container-fluid">
 
   <div class="row">
     <div class="col-sm-8">
-      <h1>Ratings and review</h1>
-
-
-      <div class="message">
-
-        <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
-        <div class="message-name">
-          <h3>Manel</h3>
-          <p>10/07/17</p>
-        </div>
-        <div class="message-body">
-          <p><strong>To fast to learn!</strong></p>
-          <p>
-            blablablablablablablablablablablablablablablablablablablablablablablablablabla
-          </p>
-        </div>
+      <div class="col-sm-6">
+        <img src='https://kitt.lewagon.com/placeholder/users/alex-felix' class="avatar-large"/>
+        <p>name: <%= @teacher_subject.user.name %> </p>
+        <p>email: <%= @teacher_subject.user.email %></p>
+        <p>address: <%= @teacher_subject.user.address %></p>
       </div>
 
-      <div class="message">
-
-        <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
-        <div class="message-name">
-          <h3>Gabrigol</h3>
-          <p>10/07/17</p>
-        </div>
-        <div class="message-body">
-          <p><strong>To fast to learn!</strong></p>
-          <p>
-            blablablablablablablablablablablablablablablablablablablablablablablablablabla
-          </p>
-        </div>
+      <div class="col-sm-6">
+        <h1> lesson description</h1>
+        <h2>You will teach <%= @teacher_subject.subject.name %> from <%= @teacher_subject.begin %> to <%= @teacher_subject.end %>.</h2>
       </div>
+      <div class="col-sm-12">
 
-      <div class="message">
+        <h1>Ratings and review</h1>
 
-        <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
-        <div class="message-name">
-          <h3>Cisco</h3>
-          <p>10/07/17</p>
+        <div class="message">
+          <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+          <div class="message-name">
+            <h3>Manel</h3>
+            <p>10/07/17</p>
+          </div>
+
+          <div class="message-body">
+            <p><strong>To fast to learn!</strong></p>
+            <p>
+              blablablablablablablablablablablablablablablablablablablablablablablablablabla
+            </p>
+          </div>
         </div>
-        <div class="message-body">
-          <p><strong>To fast to learn!</strong></p>
-          <p>
-            blablablablablablablablablablablablablablablablablablablablablablablablablabla
-          </p>
+
+        <div class="message">
+          <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+          <div class="message-name">
+            <h3>Gabrigol</h3>
+            <p>10/07/17</p>
+          </div>
+
+          <div class="message-body">
+            <p><strong>To fast to learn!</strong></p>
+            <p>
+              blablablablablablablablablablablablablablablablablablablablablablablablablabla
+            </p>
+          </div>
+        </div>
+
+        <div class="message">
+          <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+          <div class="message-name">
+            <h3>Cisco</h3>
+            <p>10/07/17</p>
+          </div>
+          <div class="message-body">
+            <p><strong>To fast to learn!</strong></p>
+            <p>
+              blablablablablablablablablablablablablablablablablablablablablablablablablabla
+            </p>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="col-sm-4">
-        <h1>map map map</h1>
-        <h1>map map map</h1>
-        <h1>map map map</h1>
-        <h1>map map map</h1>
-        <h1>map map map</h1>
+      <div id="map" style="position: relative; overflow: hidden;">
+        <div style="height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; background-color: rgb(229, 227, 223);">
+          <div class="gm-err-container">
+            <div class="gm-err-content">
+              <div class="gm-err-icon">
+                <img src="https://maps.gstatic.com/mapfiles/api-3/images/icon_error.png" draggable="false" style="user-select: none;">
+              </div>
+              <div class="gm-err-title">Ups! Ocorreu um erro.</div>
+              <div class="gm-err-message">Esta página não carregou corretamente o Google Maps. Consulte a Consola de JavaScript para obter detalhes técnicos.</div>
+            </div>
+          </div>
+        </div>
 
+      </div>
     </div>
 
-  </div>
+
+    <script>
+      function initMap() {
+        // Create a map object and specify the DOM element for display.
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 52.5206, lng: 13.4098},
+          scrollwheel: false,
+          zoom: 8
+        });
+      }
+    </script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Gmaps JavaScript -->
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzER7O10ZOUp7FloJzMe2r8X1GIQhgt7Q&callback=initMap">
+  </script>
+
+
 </div>
+</div>
+
 
