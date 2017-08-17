@@ -6,7 +6,17 @@ Rails.application.routes.draw do
     get 'became_teacher', to: 'confirmations/registrations#became_teacher'
   end
   # get 'became_teacher', to: 'confirmations/registrations#became_teacher'
-  resources :teacher_subjects
+  resources :teacher_subjects do
+    resources :lessons, only: [:create] do
+    end
+  end
+
+  resources :lessons, only: [] do
+    member do
+      put :change_status
+    end
+  end
+
   root to: 'pages#home'
 
   resources :profiles, only: [:show ]
