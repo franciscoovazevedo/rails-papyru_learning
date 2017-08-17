@@ -7,5 +7,8 @@ Rails.application.routes.draw do
   # get 'became_teacher', to: 'confirmations/registrations#became_teacher'
   resources :teacher_subjects
   root to: 'pages#home'
+
+
+  get 'errors', to: 'pages#errors'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

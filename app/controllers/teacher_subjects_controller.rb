@@ -1,11 +1,13 @@
   class TeacherSubjectsController < ApplicationController
+    before_action :find_teacher_subject, only: [:show, :edit, :update, :destroy]
+    before_action :protect_teacher, only: [:edit, :update, :destroy]
+
   def index
     @subject = Subject.where(name: params[:subject]).first
     @teacher_subjects = TeacherSubject.where(subject_id: @subject.id)
   end
 
   def show
-    find_teacher_subject
   end
 
   def new
@@ -28,17 +30,30 @@
   end
 
   def edit
-    find_teacher_subject
   end
 
   def update
-
+    if @teacher_subject.update(teacher_subject_params)
+      redirect_to find_teacher_subject
+    else
+      render :edit
+    end
   end
 
   def destroy
+    if @teacher_subject.destroy
+      notice: "Success"
+      redirect_to root
+    else
+      notice: "Insucces"
+      redirect_to root
   end
 
   private
+
+  def protect_teacher
+    raise ActiveRecord::RecordNotFound unless current_user == @teacher_subject.user
+  end
 
   def teacher_subject_params
     params.require(:teacher_subject).permit(:end, :begin, :description, :price, :subject_id)
