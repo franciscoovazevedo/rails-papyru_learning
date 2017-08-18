@@ -1,43 +1,42 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 text-center">
-      <div class="header_container">
-          <form>
-            <div class="form-group">
-              <label for="Help"><h1>How can we help?</h1></label>
-              <input class="form-control form-control-lg text-center" type="text" placeholder="question">
-            </div>
-          </form>
+<div class="page-body">
+  <div class="box">
+    <div class="container">
 
-       <!--  <h1>How can we help?</h1>
-        <div class="form-group">
-          <label for="usr"></label>
-          <input type="text" class="form-control" id="usr">
-        </div> -->
-      </div>
-    </div>
-  </div>
-    <div class="middle-part">
-      <div class="row">
-        <div class="col-xs-3">
-        </div>
-        <div class="col-xs-9">
-           <div class="link_container">
-              <ul>
-                <li><%= link_to "Become a teacher", new_teacher_subject_path%></li>
-                <li><%= link_to "Add new lesson", new_teacher_subject_path%></li>
-                <li><%= link_to "Search for lessons", root_path%></li>
-              </ul>
-              <p>When all the pages are ready, we can add the rest of the links here</p>
-            </div>
+      <h1> How can we help? </h1>
 
-            <div class="p-container">
-              <h3>Privacy</h3>
-              <p>
-                We take privacy seriously. The information you provide during this process is governed by our Privacy Policy and sent to us and our third-party partners using SSL—the same secure encryption that websites use to transmit credit card numbers. Our third-party partners handle this info according to our Privacy Policy.
-              </p>
-            </div>
-        </div>
+      <form>
+          <textarea class="form-control" id="text-area" rows="3" placeholder="Type your question here"></textarea>
+          <button type="button" class="btn btn-success">Send</button>
+      </form>
+
     </div>
   </div>
 </div>
+
+<!--
+
+<div class="middle-part">
+  <div class="row">
+    <div class="col-xs-3">
+    </div>
+    <div class="col-xs-9">
+       <div class="link_container">
+          <ul>
+            <li><%= link_to "Become a teacher", new_teacher_subject_path%></li>
+            <li><%= link_to "Add new lesson", new_teacher_subject_path%></li>
+            <li><%= link_to "Search for lessons", root_path%></li>
+          </ul>
+          <p>When all the pages are ready, we can add the rest of the links here</p>
+        </div>
+
+        <div class="p-container">
+          <h3>Privacy</h3>
+          <p>
+            We take privacy seriously. The information you provide during this process is governed by our Privacy Policy and sent to us and our third-party partners using SSL—the same secure encryption that websites use to transmit credit card numbers. Our third-party partners handle this info according to our Privacy Policy.
+          </p>
+        </div>
+      </div>
+  </div>
+</div>
+
+-->
