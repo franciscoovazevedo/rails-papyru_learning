@@ -6,13 +6,13 @@
 
 <% if @profile.user.teacher? %>
   <h2> LESSONS AS A TEACHER</h2>
-  <p> <%= @profile.user.address %> <% i = 0 %></p>
+  <p> <% i = 0 %></p>
     <% @profile.user.teacher_subjects.each do |lesson| %>
     <p> LESSON(as teacher) # <%= i += 1 %>- <strong><%= lesson.subject.name %></strong>- begin <%= lesson.begin %> to <%= lesson.end %> </p>
   <% end %>
 <% end %>
-
   <h2>Lessons to attend as a student</h2>
-    <% @profile.user.lessons.each do |lesson| %>
-    <p> <%= link_to lesson.date.to_s, teacher_subject_path(lesson.teacher_subject) %> </p>
+    <% @profile.user.lessons.each_with_index do |lesson, ind| %>
+    <p> <%= link_to "Lesson(as student)", teacher_subject_path(lesson.teacher_subject) %>
+        <%= link_to "Review this lesson", new_lesson_review_path(lesson) %> </p>
 <% end %>
