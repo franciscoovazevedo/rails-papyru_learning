@@ -1,31 +1,46 @@
 <div class="container-fluid">
-
   <div class="row">
     <div class="col-sm-8">
       <div class="col-sm-6">
         <div class="info">
-          <img src='https://kitt.lewagon.com/placeholder/users/alex-felix' class="avatar-large"/>
-          <p>name: <%= link_to @teacher_subject.user.name, profile_path(Profile.where(user_id: @teacher_subject.user.id).first.id) %> </p>
-          <p>email: <%= @teacher_subject.user.email %></p>
-          <p>address: <%= @teacher_subject.user.address %></p>
+
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2))">
+
+            <div class="card-category">Teacher</div>
+            <div class="card-description">
+              <h2>name: <%= link_to @teacher_subject.user.name, profile_path(Profile.where(user_id: @teacher_subject.user.id).first.id) %></h2>
+              <p>email: <%= @teacher_subject.user.email %></p>
+              <p>address: <%= @teacher_subject.user.address %></p>
+            </div>
+            <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+            <a class="card-link" href="#" ></a>
+          </div>
         </div>
       </div>
 
       <div class="col-sm-6">
         <div class="info">
-          <h1> Lesson description</h1>
-          <p> description: </p>
-          <h4>You will teach <%= @teacher_subject.subject.name %> from <%= @teacher_subject.begin %> to <%= @teacher_subject.end %>.</h4>
-          <%= link_to "Book now", teacher_subject_lessons_path(@teacher_subject), method: :post, class: "btn-treehouse" %>
-          <!-- <a href="#" class="btn-treehouse">Book lesson</a> -->
+
+
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2))">
+
+            <div class="card-category">Lesson</div>
+            <div class="card-description">
+              <h3> description: </h3>
+              <p>You will teach <%= @teacher_subject.subject.name %> from <%= @teacher_subject.begin %> to <%= @teacher_subject.end %>.</p>
+              <%= link_to "Book now", teacher_subject_lessons_path(@teacher_subject), method: :post, class: "btn-treehouse" %>
+              <!-- <a href="#" class="btn-treehouse">Book lesson</a> -->
+            </div>
+            <%= image_tag("icons/logo-web.png", :alt => "Papyru Learning", class: "card-logo") %>
+            <a class="card-link" href="#" ></a>
+          </div>
         </div>
       </div>
 
-
       <div class="col-sm-12">
         <div class="info">
-          <h1>Ratings and review</h1>
-          <% @teacher_subject.reviews.each do |review| %>
+          <h1>Rating and reviews</h1>
+             <% @teacher_subject.reviews.each do |review| %>
           <div class="message">
             <%= link_to(image_tag(review.user.photo, :alt => review.user.name, :title => review.user.name, class: 'avatar-large')) %>
             <div class="message-name">
@@ -39,8 +54,7 @@
               </p>
             </div>
           </div>
-          <% end %>
-
+          <% end %>         
         </div>
       </div>
     </div>
@@ -67,7 +81,7 @@
       function initMap() {
         // Create a map object and specify the DOM element for display.
         var map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 52.5206, lng: 13.4098},
+          center: {lat: 38.7541, lng: -9.1855},
           scrollwheel: false,
           zoom: 8
         });
@@ -81,7 +95,6 @@
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzER7O10ZOUp7FloJzMe2r8X1GIQhgt7Q&callback=initMap">
   </script>
-
 
   </div>
 </div>
