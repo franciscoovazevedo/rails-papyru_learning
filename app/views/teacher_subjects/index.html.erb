@@ -3,7 +3,6 @@
     <% @teacher_subjects.each do |lesson| %>
       <div class="col-xs-4">
         <div class="card">
-          <%= link_to teacher_subject_path(lesson), :action => 'go' do %>
             <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('https://images.alphacoders.com/460/460066.jpg');">
               <span class="card-category"><%= lesson.subject.name %></span>
               <div class="card-description">
@@ -12,9 +11,8 @@
                 <a>Continue reading</a>
               </div>
               <%= image_tag(lesson.user.photo, alt: lesson.user.name, class: 'avatar avatar-large') %>
-              <a class="card-link"></a>
+              <%= link_to "", teacher_subject_path(lesson), class: "card-link" %>
             </div>
-          <% end %>
           <div class="card-footer">
             <p>From <%= lesson.begin.strftime('%m/%d/%Y') %> to <%= lesson.end.strftime('%m/%d/%Y') %></p>
             <div class="controls">
@@ -28,8 +26,3 @@
     <% end %>
   </div>
 </div>
-
-<h1>Advertises for Lessons</h1>
-<% @teacher_subjects.each do |lesson| %>
-  <p><%= lesson.user.name %> offers to teach <%= lesson.subject.name %> between <%= lesson.begin %> and <%= lesson.end %> <%= link_to "see more", teacher_subject_path(lesson) %></p>
-<% end %>
