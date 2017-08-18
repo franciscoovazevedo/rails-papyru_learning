@@ -2,6 +2,7 @@ class Lesson < ApplicationRecord
   belongs_to :user
   belongs_to :teacher_subject
   validate :date_presence
+  has_many :reviews
 
   private
 

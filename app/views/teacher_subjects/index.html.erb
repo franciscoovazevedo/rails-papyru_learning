@@ -26,3 +26,8 @@
     <% end %>
   </div>
 </div>
+
+<h1>Advertises for Lessons</h1>
+<% @teacher_subjects.each do |lesson| %>
+  <p><%= lesson.user.name %> offers to teach <%= lesson.subject.name %> between <%= lesson.begin %> and <%= lesson.end %> <%= link_to "see more", teacher_subject_path(lesson) %></p>
+<% end %>

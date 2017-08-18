@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     member do
       put :change_status
     end
+    resources :reviews, only: [:create, :new]
   end
 
   root to: 'pages#home'

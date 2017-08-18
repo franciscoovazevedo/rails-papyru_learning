@@ -43,6 +43,7 @@
   def destroy
     @teacher_subject.destroy
   end
+
   private
 
   def protect_teacher

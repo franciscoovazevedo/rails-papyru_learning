@@ -13,61 +13,34 @@
 
       <div class="col-sm-6">
         <div class="info">
-          <h1> lesson description</h1>
+          <h1> Lesson description</h1>
           <p> description: </p>
           <h4>You will teach <%= @teacher_subject.subject.name %> from <%= @teacher_subject.begin %> to <%= @teacher_subject.end %>.</h4>
           <%= link_to "Book now", teacher_subject_lessons_path(@teacher_subject), method: :post, class: "btn-treehouse" %>
           <!-- <a href="#" class="btn-treehouse">Book lesson</a> -->
         </div>
       </div>
+
+
       <div class="col-sm-12">
         <div class="info">
-
           <h1>Ratings and review</h1>
-
+          <% @teacher_subject.reviews.each do |review| %>
           <div class="message">
-            <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+            <%= link_to(image_tag(review.user.photo, :alt => review.user.name, :title => review.user.name, class: 'avatar-large')) %>
             <div class="message-name">
-              <h3>Manel</h3>
-              <p>10/07/17</p>
+              <h3><%= review.user.name %></h3>
+              <p> <%= review.lesson.date.to_s %></p>
             </div>
 
             <div class="message-body">
-              <p><strong>To fast to learn!</strong></p>
               <p>
-                blablablablablablablablablablablablablablablablablablablablablablablablablabla
+                <%= review.content %>
               </p>
             </div>
           </div>
+          <% end %>
 
-          <div class="message">
-            <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
-            <div class="message-name">
-              <h3>Gabrigol</h3>
-              <p>10/07/17</p>
-            </div>
-
-            <div class="message-body">
-              <p><strong>To fast to learn!</strong></p>
-              <p>
-                blablablablablablablablablablablablablablablablablablablablablablablablablabla
-              </p>
-            </div>
-          </div>
-
-          <div class="message">
-            <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
-            <div class="message-name">
-              <h3>Cisco</h3>
-              <p>10/07/17</p>
-            </div>
-            <div class="message-body">
-              <p><strong>To fast to learn!</strong></p>
-              <p>
-                blablablablablablablablablablablablablablablablablablablablablablablablablabla
-              </p>
-            </div>
-          </div>
         </div>
       </div>
     </div>
