@@ -52,7 +52,7 @@ class RegistrationsController < Devise::RegistrationsController
   def became_teacher
     current_user.teacher = true
     current_user.save
-    redirect_to new_teacher_subject_path, notice: "YOU ARE NOW A TEACHER!!!"
+    redirect_to new_teacher_subject_path
   end
   # GET /resource/cancel
   # Forces the session data which is usually expired after sign
