@@ -29,7 +29,7 @@ subject.each do |subject|
 end
 
 User.all.each do |user|
-  Profile.new(user: user)
+  Profile.create(user: user)
 end
 
 
