@@ -2,6 +2,7 @@ class TeacherSubject < ApplicationRecord
   belongs_to :subject
   belongs_to :user
   has_many :lessons
+  has_many :reviews, through: :lessons
 
   validate :date_begin
   validate :date_end

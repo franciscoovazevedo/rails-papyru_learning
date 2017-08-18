@@ -1,22 +1,76 @@
-<h2>Sign up</h2>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10&appId=422050091524676";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+<div class="page-body">
+  <div class="container">
+    <div class="form-container">
+      <div class="simple-form">
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :name, required: true %>
-    <%= f.input :phone_number, required: true %>
-    <%= f.input :address, required: true %>
-    <%= f.input :email, required: true, autofocus: true %>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-    <%= f.input :password_confirmation, required: true %>
-    <%= f.input :photo %>
-    <%= f.input :photo_cache, as: :hidden %>
+          <div class="social-btn">
+            <div class="fb-login-button" data-width="350" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
+          </div>
+
+          <div style="margin-top: 16px; margin-bottom: 16px;">
+            <div class="line-container">
+              <span class="line-content">
+                <span class="line-text">
+                  <span>or</span>
+                </span>
+              </span>
+            </div>
+          </div>
+
+          <h4 class="text-center" style="color: #17AA1C; ">Sign up With Email</h4>
+
+          <div class="input">
+            <%= f.input :name, required: true, label: false, input_html: { type: "name", placeholder: "Name" } %>
+            <span><i class="fa fa-user"></i></span>
+          </div>
+
+          <div class="input">
+            <%= f.input :phone_number, required: true, label: false, input_html: { type: "phone_number", placeholder: "Phone number" } %>
+            <span><i class="fa fa-phone"></i></span>
+          </div>
+
+          <div class="input">
+            <%= f.input :address, required: true, label: false, input_html: { type: 'address', placeholder: 'Address' } %>
+            <span id="lock"><i class="fa fa-map-marker"></i></span>
+          </div>
+
+          <div class="input">
+            <%= f.input :email, required: true, label: false, input_html: { type: "email", placeholder: "Email" } %>
+            <span><i class="fa fa-envelope-o"></i></span>
+          </div>
+
+          <div class="input">
+            <%= f.input :password, required: true, label: false, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), input_html: { type: "password", placeholder: "Password" } %>
+            <span><i class="fa fa-unlock-alt"></i></span>
+          </div>
+
+          <div class="input">
+            <%= f.input :password_confirmation, required: true, label: false, input_html: { type: 'password', placeholder: 'Confirm your password' } %>
+            <span id="lock"><i class="fa fa-lock"></i></span>
+          </div>
+
+          <%= f.input :photo %>
+
+          <%= f.input :photo_cache, as: :hidden %>
+
+          <div class="form-actions">
+            <%= f.button :submit, "Sign Up", class: "submit" %>
+          </div>
+
+        <% end %>
+      </div>
+    </div>
   </div>
+</div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>

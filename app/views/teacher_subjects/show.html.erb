@@ -21,6 +21,7 @@
       <div class="col-sm-6">
         <div class="info">
 
+
           <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2))">
 
             <div class="card-category">Lesson</div>
@@ -39,50 +40,21 @@
       <div class="col-sm-12">
         <div class="info">
           <h1>Rating and reviews</h1>
-            <div style="border-top: 1px solid black;" class="message">
-              <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
-              <div class="message-name">
-                <h3>Manel</h3>
-                <p>10/07/17</p>
-              </div>
-
-              <div class="message-body">
-                <p><strong>To fast to learn!</strong></p>
-                <p>
-                  blablablablablablablablablablablablablablablablablablablablablablablablablabla
-                </p>
-              </div>
+             <% @teacher_subject.reviews.each do |review| %>
+          <div class="message">
+            <%= link_to(image_tag(review.user.photo, :alt => review.user.name, :title => review.user.name, class: 'avatar-large')) %>
+            <div class="message-name">
+              <h3><%= review.user.name %></h3>
+              <p> <%= review.lesson.date.to_s %></p>
             </div>
 
-              <div class="message">
-                <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
-                <div class="message-name">
-                  <h3>Gabrigol</h3>
-                  <p>10/07/17</p>
-                </div>
-
-                <div class="message-body">
-                  <p><strong>To fast to learn!</strong></p>
-                  <p>
-                    blablablablablablablablablablablablablablablablablablablablablablablablablabla
-                  </p>
-                </div>
-              </div>
-
-              <div class="message">
-                <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
-                <div class="message-name">
-                  <h3>Cisco</h3>
-                  <p>10/07/17</p>
-                </div>
-                <div class="message-body">
-                  <p><strong>To fast to learn!</strong></p>
-                  <p>
-                    blablablablablablablablablablablablablablablablablablablablablablablablablabla
-                  </p>
-                </div>
-              </div>
-
+            <div class="message-body">
+              <p>
+                <%= review.content %>
+              </p>
+            </div>
+          </div>
+          <% end %>         
         </div>
       </div>
     </div>

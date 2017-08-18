@@ -1,7 +1,7 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag("icons/logo-web.png", :alt => "Papyru Learning") %>
+    <%= image_tag("icons/logo-web-learning.png", :alt => "Papyru Learning") %>
   <% end %>
 
   <!-- Right Navigation -->
@@ -35,18 +35,18 @@
 
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
-              <%= link_to "#" do %>
+              <%= link_to edit_user_registration_path do %>
                 <%= t(".profile", default: "Edit Profile") %>
               <% end %>
             </li>
             <li>
-              <%= link_to "#" do %>
-                <%= t(".profile", default: "Account Settings") %>
+              <%= link_to profile_path(current_user.profile) do %>
+                <%= t(".profile", default: "My Profile") %>
               <% end %>
             </li>
             <li>
               <%= link_to became_teacher_path do %>
-                <%= t("#", default: "Become a Teacher") %>
+                <%= t("#", default: "New Add") %>
               <% end %>
             </li>
             <li>
