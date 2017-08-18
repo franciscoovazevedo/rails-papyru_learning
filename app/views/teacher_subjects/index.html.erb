@@ -1,7 +1,28 @@
-<h1>Advertises for Lessons</h1>
-<% @teacher_subjects.each do |lesson| %>
-  <p><%= lesson.user.name %> offers to teach <%= lesson.subject.name %> between <%= lesson.begin %> and <%= lesson.end %></p>
-<% end %>
-
-
-<!-- change_status_lesson_path(@lesson, status: 'confirmed') -->
+<div class="container">
+  <div class="row">
+    <% @teacher_subjects.each do |lesson| %>
+      <div class="col-xs-4">
+        <div class="card">
+          <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('https://images.alphacoders.com/460/460066.jpg');">
+            <span class="card-category"><%= lesson.subject.name %></span>
+            <div class="card-description">
+              <h2><%= lesson.user.name %></h2>
+              <p><%= lesson.description[2..100] %>...</p>
+              <a>Continue reading</a>
+            </div>
+            <img class="card-user avatar avatar-large" src="https://image.ibb.co/fzh9AQ/profile_pic.jpg">
+            <a class="card-link"></a>
+          </div>
+          <div class="card-footer">
+            <p>From <%= lesson.begin.strftime('%m/%d/%Y') %> to <%= lesson.end.strftime('%m/%d/%Y') %></p>
+            <div class="controls">
+              <a href="#"><i class="fa fa-star"></i></a></li>
+              <a href="#"><i class="fa fa-heart"></i></a></li>
+              <a href="#"><i class="fa fa-share"></i></a></li>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

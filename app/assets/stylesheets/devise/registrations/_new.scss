@@ -1,6 +1,7 @@
 .page-body {
   background: #F5F5F5;
   overflow: hidden;
+  min-height: 105vh;
 }
 
 .form-container {
@@ -124,30 +125,4 @@
   }
 }
 
-.forgot {
-  width: 350px;
-  margin: 0 auto;
-  border-bottom: 1px solid #E4E4E4;
-
-  .forgot-pwd {
-    padding: 18px 0;
-    color: #17AA1C;
-
-    &:hover, &:focus {
-      color: #17AA1C;
-    }
-  }
-}
-
-.sign-up-form {
-  padding-top: 18px;
-
-  .sign-up {
-    color: #17AA1C;
-
-    &:hover, &:focus {
-      color: #17AA1C;
-    }
-  }
-}
 
