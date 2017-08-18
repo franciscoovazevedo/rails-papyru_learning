@@ -6,11 +6,13 @@ class LessonsController < ApplicationController
   end
 
   def create
+    byebug
     @teacher_subject = TeacherSubject.find(params[:teacher_subject_id])
-    # @lesson = Lesson.new(lesson_params)
-    # @lesson.teacher_subject = @teacher_subject
-    # @lesson.user = current_user
-    # @lesson.save
+
+    @lesson = Lesson.new(lesson_params)
+    @lesson.teacher_subject = @teacher_subject
+    @lesson.user = current_user
+    @lesson.save
     redirect_to @teacher_subject.lessons.create(lesson_params.merge(user: current_user))
   end
 
