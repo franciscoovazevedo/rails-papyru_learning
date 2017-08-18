@@ -34,8 +34,8 @@ User.all.each do |user|
   TeacherSubject.create(begin: Faker::Date.forward, end: Faker::Date.forward, price: rand(10..50), description: Faker::Hipster.paragraphs + Faker::Hipster.paragraphs , user: user, subject: Subject.all.sample)
   Lesson.create(date: Faker::Date.forward, user: user, teacher_subject: TeacherSubject.all.sample)
   Profile.create(user: user)
-
 end
+puts "WORKED!!!!!!!!!"
 
 # # Already done
 # User.all.each do |user|
