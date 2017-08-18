@@ -3,7 +3,7 @@
     <% @teacher_subjects.each do |lesson| %>
       <div class="col-xs-4">
         <div class="card">
-          <%= link_to teacher_subject_path(lesson), :action => 'go' do %>
+          <%= link_to teacher_subject_path(lesson), action: 'go' do %>
             <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('https://images.alphacoders.com/460/460066.jpg');">
               <span class="card-category"><%= lesson.subject.name %></span>
               <div class="card-description">
