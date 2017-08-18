@@ -13,12 +13,12 @@ def random_numbers
   end
   phone_number
 end
-image = ImageSuckr::GoogleSuckr.new
 
 # Already created
 10.times do
-  user = User.new(name: Faker::HarryPotter.character, email:  Faker::HarryPotter.character.delete(' ') + "@hogwarts.com", phone_number: random_numbers, teacher: [true, false].sample,
-   photo: image, password: "123456", address: Faker::GameOfThrones.city  )
+  user = User.new(name: Faker::HarryPotter.character, email:  Faker::HarryPotter.character.delete(' ') +
+   "@hogwarts.com", phone_number: random_numbers, teacher: [true, false].sample, password: "123456", address: Faker::GameOfThrones.city  )
+  user.remote_photo_url = "https://randomuser.me/api/portraits/men/#{rand(0..99)}.jpg"
   user.save
 end
 

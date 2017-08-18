@@ -13,6 +13,9 @@
 <% end %>
   <h2>Lessons to attend as a student</h2>
     <% @profile.user.lessons.each_with_index do |lesson, ind| %>
-    <p> <%= link_to "Lesson(as student)", teacher_subject_path(lesson.teacher_subject) %>
+    <% unless lesson.teacher_subject.user == @profile.user %>
+    <p> <%= link_to "Lesson(as student)#{ind + 1}- ", teacher_subject_path(lesson.teacher_subject) %>
         <%= link_to "Review this lesson", new_lesson_review_path(lesson) %> </p>
+      <% end %>
 <% end %>
+
