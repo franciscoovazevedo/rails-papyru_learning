@@ -1,73 +1,88 @@
 <div class="container-fluid">
-
   <div class="row">
     <div class="col-sm-8">
       <div class="col-sm-6">
         <div class="info">
-          <img src='https://kitt.lewagon.com/placeholder/users/alex-felix' class="avatar-large"/>
-          <p>name: <%= link_to @teacher_subject.user.name, profile_path(Profile.where(user_id: @teacher_subject.user.id).first.id) %> </p>
-          <p>email: <%= @teacher_subject.user.email %></p>
-          <p>address: <%= @teacher_subject.user.address %></p>
+
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2))">
+
+            <div class="card-category">Teacher</div>
+            <div class="card-description">
+              <h2>name: <%= link_to @teacher_subject.user.name, profile_path(Profile.where(user_id: @teacher_subject.user.id).first.id) %></h2>
+              <p>email: <%= @teacher_subject.user.email %></p>
+              <p>address: <%= @teacher_subject.user.address %></p>
+            </div>
+            <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+            <a class="card-link" href="#" ></a>
+          </div>
         </div>
       </div>
 
       <div class="col-sm-6">
         <div class="info">
-          <h1> lesson description</h1>
-          <p> description: </p>
-          <h4>You will teach <%= @teacher_subject.subject.name %> from <%= @teacher_subject.begin %> to <%= @teacher_subject.end %>.</h4>
-          <%= link_to "Book now", teacher_subject_lessons_path(@teacher_subject), method: :post, class: "btn-treehouse" %>
-          <!-- <a href="#" class="btn-treehouse">Book lesson</a> -->
+
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2))">
+
+            <div class="card-category">Lesson</div>
+            <div class="card-description">
+              <h3> description: </h3>
+              <p>You will teach <%= @teacher_subject.subject.name %> from <%= @teacher_subject.begin %> to <%= @teacher_subject.end %>.</p>
+              <%= link_to "Book now", teacher_subject_lessons_path(@teacher_subject), method: :post, class: "btn-treehouse" %>
+              <!-- <a href="#" class="btn-treehouse">Book lesson</a> -->
+            </div>
+            <%= image_tag("icons/logo-web.png", :alt => "Papyru Learning", class: "card-logo") %>
+            <a class="card-link" href="#" ></a>
+          </div>
         </div>
       </div>
+
       <div class="col-sm-12">
         <div class="info">
+          <h1>Rating and reviews</h1>
+            <div style="border-top: 1px solid black;" class="message">
+              <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+              <div class="message-name">
+                <h3>Manel</h3>
+                <p>10/07/17</p>
+              </div>
 
-          <h1>Ratings and review</h1>
-
-          <div class="message">
-            <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
-            <div class="message-name">
-              <h3>Manel</h3>
-              <p>10/07/17</p>
+              <div class="message-body">
+                <p><strong>To fast to learn!</strong></p>
+                <p>
+                  blablablablablablablablablablablablablablablablablablablablablablablablablabla
+                </p>
+              </div>
             </div>
 
-            <div class="message-body">
-              <p><strong>To fast to learn!</strong></p>
-              <p>
-                blablablablablablablablablablablablablablablablablablablablablablablablablabla
-              </p>
-            </div>
-          </div>
+              <div class="message">
+                <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+                <div class="message-name">
+                  <h3>Gabrigol</h3>
+                  <p>10/07/17</p>
+                </div>
 
-          <div class="message">
-            <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
-            <div class="message-name">
-              <h3>Gabrigol</h3>
-              <p>10/07/17</p>
-            </div>
+                <div class="message-body">
+                  <p><strong>To fast to learn!</strong></p>
+                  <p>
+                    blablablablablablablablablablablablablablablablablablablablablablablablablabla
+                  </p>
+                </div>
+              </div>
 
-            <div class="message-body">
-              <p><strong>To fast to learn!</strong></p>
-              <p>
-                blablablablablablablablablablablablablablablablablablablablablablablablablabla
-              </p>
-            </div>
-          </div>
+              <div class="message">
+                <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+                <div class="message-name">
+                  <h3>Cisco</h3>
+                  <p>10/07/17</p>
+                </div>
+                <div class="message-body">
+                  <p><strong>To fast to learn!</strong></p>
+                  <p>
+                    blablablablablablablablablablablablablablablablablablablablablablablablablabla
+                  </p>
+                </div>
+              </div>
 
-          <div class="message">
-            <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
-            <div class="message-name">
-              <h3>Cisco</h3>
-              <p>10/07/17</p>
-            </div>
-            <div class="message-body">
-              <p><strong>To fast to learn!</strong></p>
-              <p>
-                blablablablablablablablablablablablablablablablablablablablablablablablablabla
-              </p>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -108,7 +123,6 @@
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzER7O10ZOUp7FloJzMe2r8X1GIQhgt7Q&callback=initMap">
   </script>
-
 
   </div>
 </div>
