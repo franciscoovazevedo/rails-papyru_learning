@@ -27,13 +27,14 @@
           <h1>Ratings and review</h1>
           <% @teacher_subject.reviews.each do |review| %>
           <div class="message">
-            <%= link_to(image_tag(review.user.photo, :alt => review.user.name, :title => review.user.name, class: 'avatar-large')) %>
+            <%= link_to(image_tag(user_avatar(review.user), :alt => review.user.name, :title => review.user.name, class: 'avatar-large')) %>
             <div class="message-name">
               <h3><%= review.user.name %></h3>
               <p> <%= review.lesson.date.to_s %></p>
             </div>
 
             <div class="message-body">
+              <p><strong>Ranting: <%= review.rating %></strong></p>
               <p>
                 <%= review.content %>
               </p>
