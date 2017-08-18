@@ -16,7 +16,8 @@
           <h1> lesson description</h1>
           <p> description: </p>
           <h4>You will teach <%= @teacher_subject.subject.name %> from <%= @teacher_subject.begin %> to <%= @teacher_subject.end %>.</h4>
-          <a href="#" class="btn-treehouse">Book lesson</a>
+          <%= link_to "Book now", teacher_subject_lessons_path(@teacher_subject), method: :post, class: "btn-treehouse" %>
+          <!-- <a href="#" class="btn-treehouse">Book lesson</a> -->
         </div>
       </div>
       <div class="col-sm-12">
