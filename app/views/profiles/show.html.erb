@@ -1,21 +1,27 @@
-<h1>THIS IS THE USER PROFILE PAGE</h1>
-<h1> NAME: <%= @profile.user.name %> </h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2 text-center">
 
+      <h1 style="color: #17AA1C;"><%= @profile.user.name %> </h1>
 
-<!-- check if the user is a teacher! -->
+      <%= link_to(image_tag(user_avatar(@profile.user), :alt => @profile.user.name, :title => @profile.user.name, class: 'avatar-large', )) %>
 
-<% if @profile.user.teacher? %>
-  <h2> LESSONS AS A TEACHER</h2>
-  <p> <% i = 0 %></p>
-    <% @profile.user.teacher_subjects.each do |lesson| %>
-    <p> LESSON(as teacher) # <%= i += 1 %>- <strong><%= lesson.subject.name %></strong>- begin <%= lesson.begin %> to <%= lesson.end %> </p>
-  <% end %>
-<% end %>
-  <h2>Lessons to attend as a student</h2>
-    <% @profile.user.lessons.each_with_index do |lesson, ind| %>
-    <% unless lesson.teacher_subject.user == @profile.user %>
-    <p> <%= link_to "Lesson(as student)#{ind + 1}- ", teacher_subject_path(lesson.teacher_subject) %>
-        <%= link_to "Review this lesson", new_lesson_review_path(lesson) %> </p>
+      <% if @profile.user.teacher? %>
+        <p><% i = 0 %></p>
+        <% @profile.user.teacher_subjects.each do |lesson| %>
+          <p> LESSON(as teacher) # <%= i += 1 %>- <strong><%= lesson.subject.name %></strong>- begin <%= lesson.begin %> to <%= lesson.end %> </p>
+        <% end %>
       <% end %>
-<% end %>
+      <hr/>
+        <h4>I'm attending this lessons:</h4>
+          <% @profile.user.lessons.each_with_index do |lesson, ind| %>
+          <% unless lesson.teacher_subject.user == @profile.user %>
+          <p> <%= link_to lesson.teacher_subject.subject.name, teacher_subject_path(lesson.teacher_subject) %> -
+              <%= link_to "Review this lesson", new_lesson_review_path(lesson) %> </p>
+            <% end %>
+      <% end %>
+
+    </div>
+  </div>
+</div>
 
