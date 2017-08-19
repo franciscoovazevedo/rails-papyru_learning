@@ -3,6 +3,7 @@
     <% @teacher_subjects.each do |lesson| %>
       <div class="col-xs-4">
         <div class="card">
+
             <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('http://wallpapercave.com/wp/6CCxuBL.jpg');">
             <%= image_tag(lesson.user.photo, alt: lesson.user.name, class: 'pull-right avatar avatar-large') %>
               <p class="card-category"><%= lesson.subject.name %></p>
