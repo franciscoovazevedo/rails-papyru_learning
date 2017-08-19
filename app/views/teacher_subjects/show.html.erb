@@ -4,13 +4,11 @@
       <div class="col-sm-6">
         <div class="info">
 
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2))">
+          <div class="card" style="background: url('http://wallpapercave.com/wp/6CCxuBL.jpg') no-repeat center center;">
 
             <div class="card-category">Teacher</div>
             <div class="card-description">
-              <h2>name: <%= link_to @teacher_subject.user.name, profile_path(Profile.where(user_id: @teacher_subject.user.id).first.id) %></h2>
-              <p>email: <%= @teacher_subject.user.email %></p>
-              <p>address: <%= @teacher_subject.user.address %></p>
+              <h2><%= link_to @teacher_subject.user.name, profile_path(Profile.where(user_id: @teacher_subject.user.id).first.id), class: "cisco-merda" %></h2>
             </div>
             <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
           </div>
@@ -21,13 +19,12 @@
         <div class="info">
 
 
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2))">
+          <div class="card" style="background: url('http://wallpapercave.com/wp/6CCxuBL.jpg') no-repeat center center;">
 
             <div class="card-category">Lesson</div>
             <div class="card-description">
-              <h3> description: </h3>
-              <p>You will teach <%= @teacher_subject.subject.name %> from <%= @teacher_subject.begin %> to <%= @teacher_subject.end %>.</p>
-              <%= link_to "Book now", teacher_subject_lessons_path(@teacher_subject), method: :post, class: "btn-treehouse" %>
+              <h3><%= @teacher_subject.subject.name %></h3>
+              <%= link_to "Book now", teacher_subject_lessons_path(@teacher_subject), method: :post, class: "btn-treehouse pull-right" %>
               <!-- <a href="#" class="btn-treehouse">Book lesson</a> -->
             </div>
             <%= image_tag("icons/logo-web.png", :alt => "Papyru Learning", class: "card-logo") %>
@@ -37,7 +34,7 @@
 
       <div class="col-sm-12">
         <div class="info">
-          <h1>Rating and reviews</h1>
+          <h1 style="color: #20AD24; top: 20px;">Rating and reviews</h1>
              <% @teacher_subject.reviews.each do |review| %>
           <div class="message">
             <%= link_to(image_tag(user_avatar(review.user), :alt => review.user.name, :title => review.user.name, class: 'avatar-large')) %>
